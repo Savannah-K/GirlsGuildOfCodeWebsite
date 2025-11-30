@@ -24,7 +24,7 @@
       /*Navigation Bar <3*/
       .topnav {
         background-color: pink;
-        padding: 15px;
+        padding: 10px;
   
       }
 
@@ -32,7 +32,7 @@
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: 40px;
       }
 
       .topnav li.right {
@@ -40,20 +40,22 @@
       }
 
       .topnav a {
-        text-decoration: dotted;
+        text-decoration: none;
         color: black;
         font-weight: bold;
+        font-size: medium;
       }
 
       /*Picture, Quote, or Logo area (not decided yet)*/
       .picture-area {
         text-align: center;
-        padding: 30px 0;
+        padding: 15px 0;
       }
 
       .picture-area img {
-        width: 80%;
-        height: auto;
+        width: 100%;
+        height: fit-content;
+        
       }
 
       /*Hero Section Start*/
@@ -80,7 +82,7 @@
       .left-box,
       .right-box {
         flex: 1;
-        background-color: antiquewhite;
+        background-color: rgb(209, 243, 209);
         padding: 20px;
         border-radius: 20;
         min-height: 250px;
@@ -93,17 +95,17 @@
       /*Footer*/
       footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         background-color: #a3ccda;
-        padding: 20px;
-        margin-top: 40px;
+        padding: 2%;
+        margin-top: 10px;
       }
       .contact {
         width: 30%;
       }
       .footer-links {
         display: flex;
-        gap: 30px;
+        gap: 30%;
         align-items: center;
       }
 
@@ -119,11 +121,11 @@
    <!--Navigation Bar links-->
    <nav class="topnav">
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Newsletter</a></li>
-        <li><a href="#">Project Gallery</a></li>
-        <li><a href="#">Events</a></li>
+        <li><a href="#"> ✿ Home  ✿</a></li>
+        <li><a href="#"> ✿ Resources  ✿</a></li>
+        <li><a href="#"> ✿ Newsletter  ✿</a></li>
+        <li><a href="#"> ✿ Project Gallery  ✿</a></li>
+        <li><a href="#"> ✿ Events  ✿</a></li>
     </ul>
 </nav>
 <!--Picture/logo area-->
@@ -157,6 +159,6 @@
     <a href="#">Credits</a>
   </div>
 </footer>
-
-  </body>
+<script src="index.js"></script>
+</body>
 </html>
