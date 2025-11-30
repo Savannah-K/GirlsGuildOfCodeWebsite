@@ -51,7 +51,8 @@
       }
 
       .picture-area img {
-        width: 180px;
+        width: 80%;
+        height: auto;
       }
 
       /*Hero Section Start*/
@@ -82,12 +83,69 @@
         padding: 20px;
         border-radius: 20;
         min-height: 250px;
-        border: 1px solid;
+        border: 1px solid black;
+      }
+      .left-box {
+        border-style: dotted;
+      }
+
+      /*Footer*/
+      footer {
+        display: flex;
+        justify-content: space-between;
+        background-color: #a3ccda;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .contact {
+        width: 30%;
+      }
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .footer-links {
+        text-decoration: wavy;
+        color: black;
+        font-weight: bold;
       }
     </style>
   </head>
 
   <body>
-    <h1>FILL IN HERE</h1>
+   <!--Navigation Bar links-->
+   <nav class="navigation"
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Project Gallery</a></li>
+        <li><a href="#">Events</a></li>
+    </ul>
+</nav>
+<!--Picture/logo area-->
+<div class="picture-area">
+    <img src="https://files.catbox.moe/d8a1lt.jpg" alt="Logo">
+</div>
+<!--Hero-bit section-->
+<section class="hero-section">
+    <h1>Welcome to Girls Guild Of Code</h1>
+    <p>A community supporting girls in code and tech fields</p>
+</section>
+
+<!--Announcement/Event board on left, music on right-->
+<section class="main-bit">
+    <div class="left-box"
+        <h2>Announcement</h2>
+        <p>Curent Events here</p>
+</div>
+
+<div class="right-box">
+    <h2>Image and music bit here</h2>
+</div>
+</section>
+
   </body>
 </html>
