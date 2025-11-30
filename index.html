@@ -21,20 +21,30 @@
         font-family: "Times New Roman", Times, serif;
       }
 
+      body {
+        background-image: url(https://files.catbox.moe/h08n2c.png);
+      }
+
       /*Navigation Bar <3*/
       .topnav {
-        background-color: pink;
+        background-color: #ffc1d9;
         padding: 10px;
         border-radius: 50px;
-  
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
       }
 
       .topnav ul {
         list-style: none;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 40px;
-        margin-left: 50px;
+        position: flex;
+  
       }
 
       .topnav li.right {
@@ -52,21 +62,20 @@
       .picture-area {
         text-align: center;
         padding: 15px 0;
-      
+        padding-top: 85px;
       }
 
       .picture-area img {
         width: 100%;
         height: fit-content;
         border-radius: 50px;
-        
       }
 
       /*Hero Section Start*/
       .hero-section {
         text-align: center;
         padding: 40px 20px;
-        background-color: #6dc3bb;
+        background-color: #c5f2b6;
         border-radius: 50px;
         height: auto;
       }
@@ -85,24 +94,47 @@
         margin: auto;
       }
 
-      .left-box,
-      .right-box {
-        flex: 1;
-        background-color: rgb(209, 243, 209);
+      .left-box{
+        height: auto;
+        width: 50%;
+        background-color: #ffe7c9;
         padding: 20px;
-        border-radius: 20;
         min-height: 250px;
         border: 1px solid black;
       }
       .left-box {
         border-style: dotted;
       }
+      .disk {
+        width: 300px;
+        height: 300px;
+        justify-content: center;
+        margin-left: 50px;
+        margin-right: auto;
+       
+        object-fit: cover;
+        -webkit-mask-image: url(https://i.postimg.cc/3RYpcLqS/14.png);
+        -webkit-mask-size: 100%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+      
+      .disk {
+        animation-name: spin;
+        animation-timing-function: linear;
+      }
+       @keyframes spin {
+        from { transform: rotate(0deg) }
+        to { transform: rotate(360deg) }
+      }
 
-      /*Footer*/
+     /*Footer*/
       footer {
         display: flex;
         justify-content: center;
-        background-color: #a3ccda;
+        background-color: #a0e0ff;
         padding: 2%;
         margin-top: 10px;
         border-radius: 50px;
@@ -125,47 +157,47 @@
   </head>
 
   <body>
-   <!--Navigation Bar links-->
-   <nav class="topnav">
-    <ul>
-        <li><a href="#"> ✿ Home  ✿</a></li>
-        <li><a href="#"> ✿ Resources  ✿</a></li>
-        <li><a href="#"> ✿ Newsletter  ✿</a></li>
-        <li><a href="#"> ✿ Project Gallery  ✿</a></li>
-        <li><a href="#"> ✿ Events  ✿</a></li>
-    </ul>
-</nav>
-<!--Picture/logo area-->
-<div class="picture-area">
-    <img src="https://files.catbox.moe/d8a1lt.jpg" alt="Logo">
-</div>
-<!--Hero-bit section-->
-<section class="hero-section">
-    <h1>Welcome to Girls Guild Of Code</h1>
-    <p>A community supporting girls in code and tech fields</p>
-</section>
+    <!--Navigation Bar links-->
+    <nav class="topnav">
+      <ul>
+        <li><a href="#"> ✿Home✿</a></li>
+        <li><a href="#"> ✿Resources✿</a></li>
+        <li><a href="#"> ✿Newsletter✿</a></li>
+        <li><a href="#"> ✿Project Gallery✿</a></li>
+        <li><a href="#"> ✿Events✿</a></li>
+      </ul>
+    </nav>
+    <!--Picture/logo area-->
+    <div class="picture-area">
+      <img src="https://files.catbox.moe/d8a1lt.jpg" alt="Logo" />
+    </div>
+    <!--Hero-bit section-->
+    <section class="hero-section">
+      <h1>Welcome to Girls Guild Of Code</h1>
+      <p>Dessert marshmallow cupcake cake candy canes candy canes chupa chups tootsie roll. Gingerbread cheesecake donut sweet biscuit marshmallow gummies cookie tiramisu. Soufflé apple pie tiramisu tiramisu icing jelly-o.
+Chupa chups cheesecake lemon drops bonbon bonbon cake tiramisu. Jelly cookie carrot cake marshmallow topping gummi bears jelly-o candy croissant. Apple pie fruitcake sugar plum candy lollipop bonbon apple pie chocolate. Marzipan sweet roll bear claw danish pudding liquorice marzipan cupcake candy.</p>
+    </section>
 
-<!--Announcement/Event board on left, music on right-->
-<section class="main-bit">
-    <div class="left-box">
+    <!--Announcement/Event board on left, music on right-->
+    <section class="main-bit">
+      <div class="left-box">
         <h2>Announcement</h2>
-        <p>Curent Events here</p>
-</div>
+        <p>Dessert marshmallow cupcake cake candy canes candy canes chupa chups tootsie roll.</p>
+      </div>
 
-<div class="right-box">
-    <h2>Image and music bit here</h2>
-</div>
-</section>
+      <div class="disk-area">
+          <img class="disk" src="https://files.catbox.moe/5q9a3y.png" alt="cd">
+      </div>
+    </section>
 
-<!--Footer-->
-<footer>
-
-  <div  class="footer-links">
-    <a href="#">Discord</a>
-    <a href="#">Contact</a>
-    <a href="#">Credits</a>
-  </div>
-</footer>
-<script src="index.js"></script>
-</body>
+    <!--Footer-->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Discord</a>
+        <a href="#">Contact</a>
+        <a href="#">Credits</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
