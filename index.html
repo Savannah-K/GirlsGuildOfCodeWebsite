@@ -31,16 +31,25 @@
         background-image: url(https://files.catbox.moe/h08n2c.png);
       }
 
+      body {
+        height: 100%;
+      }
+
+      body {
+        display:flex;
+        flex-direction: column;
+      }
       /*Navigation Bar <3*/
       .topnav {
         background-color: #ffc1d9;
         padding: 10px;
         border-radius: 50px;
         position: fixed;
-        width: 100%;
+        width: calc(100% - 60px);
         top: 0;
-        left: 0;
+        left: 30;
         z-index: 1000;
+
       }
 
       .topnav ul {
@@ -48,7 +57,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 40px;
+        gap: auto;
         position: flex;
       }
 
@@ -58,16 +67,18 @@
 
       .topnav a {
         text-decoration: none;
-        color: black;
+        color: rgb(109, 82, 110);
         font-weight: bold;
-        font-size: medium;
+        font-size: 20px;
+        display:flex;
       }
 
       /*Picture, Quote, or Logo area (not decided yet)*/
       .picture-area {
         text-align: center;
         padding: 15px 0;
-        padding-top: 85px;
+        padding-top: 12%;
+        position: flex;
       }
 
       .picture-area img {
@@ -81,7 +92,7 @@
       .hero-section {
         text-align: center;
         padding: 40px 20px;
-        background-color: #c5f2b6;
+        background-color: #c4f2b5;
         border-radius: 50px;
         height: auto;
       }
@@ -108,7 +119,7 @@
         min-height: 250px;
         border-width: 7px;
         border-style: solid;
-        border-image: url("https://foollovers.com/mat/baf/flower/fl32-005-d.gif")
+        border-image: url("https://files.catbox.moe/fmru60.gif")
           7 fill round;
       }
       .left-box {
@@ -153,8 +164,10 @@
         justify-content: center;
         background-color: #a0e0ff;
         padding: 2%;
-        margin-top: 10px;
+        margin-top: 2%;
         border-radius: 50px;
+        margin-bottom: 0px;
+        position: sticky;
       }
       .contact {
         width: 30%;
@@ -163,19 +176,31 @@
         display: flex;
         gap: 30%;
         align-items: center;
+        font-size: large;
       }
 
       .footer-links {
-        text-decoration: underline wavy;
         color: black;
         font-weight: bold;
+        justify-content: center;
+      }
+
+      a:link {
+        color: rgb(109, 82, 110);
+        background-color: transparent;
+        text-decoration: underline wavy;
+      }
+
+      a:active {
+        color: #c4f2b5;
+        background-color: transparent;
       }
 
       /*-------MUSIC PLAYER BY GLENTHEMES-------*/
       #glenplayer02 {
         position:relative;
-        top:0px; 
-        left:5px;
+        top:0px;
+        left:64%;
         display:flex;
         z-index:99;
       }
@@ -190,20 +215,20 @@
         user-select:none;
         -webkit-user-select:none;
         width:13px;
-        font-size:18px;
+        font-size:20px;
         cursor:pointer;
       }
       .playy,
       .pausee {
-        color:#F6D5F0; 
+        color:#a0e0ff; 
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;} /* color of play & pause buttons */
         
       .pausee {display:none;}
       .sonata {
         margin-left:10px;
         font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size:14px;
-        color:#F6D5F0;
+        font-size:20px;
+        color:#a0e0ff;
         font-weight: bold;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0; /* color of music note symbol */
       }
@@ -219,6 +244,14 @@
         font-weight: bold;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;/* color of song title */
       }
+
+      /*Border*/
+      .pinky {
+        border-width: 7px;
+         border-style: solid;
+         border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
+      }
+   
  
     </style>
   </head>
@@ -267,7 +300,7 @@
         <img class="disk" src="https://files.catbox.moe/5q9a3y.png" alt="cd" />
       </div>
     </section>
-    <!-------MUSIC PLAYER BY GLENTHEMES------->
+    <!--MUSIC PLAYER BY GLENTHEMES-->
     <div id="glenplayer02">
       <div class="music-controls" onclick="songstart();">
         <div class="playy">►</div>
@@ -279,17 +312,16 @@
       
       <div class="labeltext"></div>
     </div><!--end music player-->
-    <audio id="tune" src="https://dl.dropbox.com/s/qiiudgbz3z9uu3b/Puella%20Magi%20Madoka%20Magica%20Akogare%20Saita%20-%20Madoka%20Kaname%20%28Character%20Song%29.mp3""audio"></audio>
-</body>
- 
-<div class="labeltext"> </div>
-
+    <audio id="tune" src="https://dl.dropbox.com/s/qiiudgbz3z9uu3b/Puella%20Magi%20Madoka%20Magica%20Akogare%20Saita%20-%20Madoka%20Kaname%20%28Character%20Song%29.mp3"></audio>
+    <div class="labeltext"> </div>
+    
     <!--Footer-->
     <footer>
       <div class="footer-links">
         <a href="#">Discord</a>
         <a href="#">Contact</a>
         <a href="#">Credits</a>
+      </div>
     </footer>
-  </body>
+    </body>
 </html>
