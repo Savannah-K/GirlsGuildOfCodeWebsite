@@ -39,12 +39,10 @@
       body {
         padding-top: 120px;
         background-image: url(https://files.catbox.moe/h08n2c.png);
-        background-size:contain
         background-repeat: repeat;
         height: 100%;
         display:flex;
-        flex-direction: column;
-      }
+        flex-direction: column;}
       /*Navigation Bar <3*/
       .topnav {
         background-color: #ffc1d9;
@@ -163,7 +161,9 @@
         width: clamp(200px, 35vw, 320px);
         height: clamp(200px, 35vw, 320px);
         display: block;
-        margin: 20px auto;
+        margin: 40px auto;
+        margin-left: 40%;
+        margin-right: 30px;
 
         object-fit: cover;
         -webkit-mask-image: url(https://i.postimg.cc/3RYpcLqS/14.png);
@@ -213,13 +213,13 @@
         justify-content: center;
       }
 
-      a:link {
+      a:any-link {
         color: rgb(109, 82, 110);
         background-color: transparent;
         text-decoration: underline wavy;
       }
 
-      a:link active {
+      a:active {
         color: #c4f2b5;
         background-color: transparent;
       }
@@ -227,11 +227,9 @@
       /*-------MUSIC PLAYER BY GLENTHEMES-------*/
       #glenplayer02 {
         display:flex;
-        justify-content: center;
-        margin-top:10px;
-        left:30%;
-        position: relative;
-
+        justify-content: right;
+        margin-top:30px;
+        position:relative;
       }
       #glenplayer02 a {text-decoration:none;}
 
@@ -264,7 +262,7 @@
 
 
       .labeltext {
-        margin-left:0px;
+        margin-inline-end: 15%;
         position: relative;
         bottom:10px;
         font-family: 'M PLUS Rounded 1c', sans-serif;
