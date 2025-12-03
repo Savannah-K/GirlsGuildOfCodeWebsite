@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link rel="preconnect" href="https://fonts.google.com/specimen/Dosis?query=sans+serif" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://files.catbox.moe/y8wxjc.gif">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="//static.tumblr.com/gtjt4bo/QRmphdsdv/glenplayer02.js"></script>
@@ -26,6 +27,7 @@
         font-family: 'M PLUS Rounded 1c', sans-serif;
         font-size: 22px;
         font: weight 5px;
+        
         
         
       }
@@ -52,7 +54,8 @@
         padding: 10px;
         border-radius: 50px;
         position: fixed;
-        width: calc(100% - 70px);
+        width: 90%;
+        max-width: 1200px;
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
@@ -83,12 +86,13 @@
 
       /*Picture, Quote, or Logo area (not decided yet)*/
       .picture-area {
+        position: relative;
         text-align: center;
         padding: 15px 0;
         margin-top: 10px;
         margin-left: 10px;
         margin-right: 10px;
-        display: flex;
+        display: relative;
       }
 
       .picture-area img {
@@ -97,11 +101,25 @@
         border-radius: 50px;
         object-fit: cover;
       }
+      
+      @font-face {
+        font-family: 'EscargothDemo'; 
+        src: url("https://girls-guild-of-code.neocities.org/fonts.css/Escargoth%20Demo.ttf") format('truetype'); /* The path to your font file */
+        font-weight: normal;
+        font-style: normal;
+      }
 
       /*Stick text to picture-area (somehow)*/
-      .logo-text text{
-        text-align: center;
-        font-size: large;
+      .logo-text {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        font-family:"EscargothDemo", sans-serif;
+        font-size:50px;
+        color:#ffedfc; 
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
+
       }
 
       /*Hero Section Start*/
@@ -113,7 +131,7 @@
         height: auto;
       }
 
-      .hero-section h1 {
+      .hero-section h2 {
         font-size: 20px;
         margin-bottom: 10px;
       }
@@ -220,11 +238,12 @@
 
       /*-------MUSIC PLAYER BY GLENTHEMES-------*/
       #glenplayer02 {
-        position:relative;
-        top:0px;
-        left:64%;
         display:flex;
-        z-index:99;
+        justify-content: center;
+        margin-top:10px;
+        left:30%;
+        position: relative;
+  
       }
       #glenplayer02 a {text-decoration:none;}
  
@@ -296,10 +315,13 @@
     <!--Picture/logo area-->
     <div class="picture-area">
       <img src="https://files.catbox.moe/y8wxjc.gif" alt="Logo" />
+      <h1 class="logo-text">Girls Guild Of Code</h1>
     </div>
+  
+    
     <!--Hero-bit section-->
     <section class="hero-section">
-      <h1>Welcome to Girls Guild Of Code</h1>
+      <h2>Welcome to Girls Guild Of Code</h2>
       <p>
         Dessert marshmallow cupcake cake candy canes candy canes chupa chups
         tootsie roll. Gingerbread cheesecake donut sweet biscuit marshmallow
