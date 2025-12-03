@@ -13,6 +13,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.google.com/specimen/Dosis?query=sans+serif" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&display=swap" rel="stylesheet">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
@@ -22,7 +23,11 @@
     <style>
       * {
         box-sizing: border-box;
-        font-family: "Times New Roman", Times, serif;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 22px;
+        font: weight 5px;
+        
+        
       }
 
       body {
@@ -93,6 +98,12 @@
         object-fit: cover;
       }
 
+      /*Stick text to picture-area (somehow)*/
+      .logo-text text{
+        text-align: center;
+        font-size: large;
+      }
+
       /*Hero Section Start*/
       .hero-section {
         text-align: center;
@@ -121,6 +132,8 @@
       .left-box {
         height: auto;
         width: 50%;
+        margin-top: 10px;
+        margin-right: 10px;
         max-width:550px;
         background-color: #ffe7c9;
         padding: 20px;
@@ -282,7 +295,7 @@
 
     <!--Picture/logo area-->
     <div class="picture-area">
-      <img src="https://files.catbox.moe/d8a1lt.jpg" alt="Logo" />
+      <img src="https://files.catbox.moe/y8wxjc.gif" alt="Logo" />
     </div>
     <!--Hero-bit section-->
     <section class="hero-section">
@@ -310,7 +323,7 @@
       </div>
 
       <div class="disk-area" style="text-align: center;">
-        <img class="disk" src="https://files.catbox.moe/5q9a3y.png" alt="cd" />
+        <img class="disk" src="https://files.catbox.moe/5q9a3y.png" oneclick="spin" alt="cd" />
       </div>
     </section>
     <!--MUSIC PLAYER BY GLENTHEMES-->
