@@ -31,61 +31,56 @@
     <style>
       * {
         box-sizing: border-box;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-family: "M PLUS Rounded 1c", sans-serif;
         font-size: 22px;
-
       }
-
+      @media (max-width: 600px) {
+      }
       body {
-        padding-top: 120px;
+        padding-top: 160px;
         background-image: url(https://files.catbox.moe/h08n2c.png);
         background-repeat: repeat;
         height: 100%;
-        display:flex;
-        flex-direction: column;}
+        display: flex;
+        flex-direction: column;
+      }
       /*Navigation Bar <3*/
       .topnav {
         background-color: #ffc1d9;
-        padding: 10px;
+        padding: 8px 12px;
         border-radius: 50px;
         position: fixed;
         width: min(900px, 90vw);
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
-
       }
-
 
       .topnav ul {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 40px;
-      }
-
-      .topnav li.right {
-        margin-right: 50px;
+        flex-wrap: wrap;
+        gap: 25px;
       }
 
       .topnav a {
         text-decoration: none;
         color: rgb(109, 82, 110);
         font-weight: bold;
-        font-size: 20px;
-        display:flex;
+        font-size: clamp(14px, 2vw, 20px);
+        display: flex;
       }
 
       /*Picture, Quote, or Logo area (not decided yet)*/
       .picture-area {
-        display: relative;
+        position: relative;
         text-align: center;
         padding: 15px 0;
         margin-top: 10px;
         margin-left: 10px;
-        margin-right: 10px;
-        display: relative;
+        margin-right: 10px;;
       }
 
       .picture-area img {
@@ -96,23 +91,24 @@
       }
 
       @font-face {
-        font-family: 'EscargothDemo';
-        src: url("https://girls-guild-of-code.neocities.org/fonts.css/Escargoth%20Demo.ttf") format('truetype'); /* The path to your font file */
+        font-family: "EscargothDemo";
+        src: url("https://girls-guild-of-code.neocities.org/fonts.css/Escargoth%20Demo.ttf")
+          format("truetype"); /* The path to your font file */
         font-weight: normal;
         font-style: normal;
       }
 
       /*Stick text to picture-area (somehow)*/
       .logo-text {
-        position:absolute;
-        top: 23%;
+        position: absolute;
+        top: calc(50% - 22%);
         left: 50%;
         transform: translate(-50%, -75%);
-        font-family:"EscargothDemo", sans-serif;
-        font-size:clamp(28px, 6vw, 55px);
-        color:#ffedfc;
+        text-align: center;
+        font-family: "EscargothDemo", sans-serif;
+        font-size: clamp(28px, 6vw, 55px);
+        color: #ffedfc;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
-
       }
 
       /*Hero Section Start*/
@@ -129,41 +125,39 @@
         margin-bottom: 10px;
       }
 
-      /*Announcement/Event board on left, music on right*/
-      .main-bit {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items:center;
-        gap: 20px;
+      @media (max-width: 768px) {
+        /*Announcement/Event board on left, music on right*/
+        .main-bit {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+        }
       }
 
-
-      @media(max-width:768px) {
-
+      @media (max-width: 768px) {
       }
       .left-box {
         height: auto;
-        width: min(500px, 90%);
+        width: min(450px, 90vw);
         margin-top: 10px;
         margin-right: 10px;
-        max-width:auto;
+        max-width: auto;
         background-color: #f7e0ec;
-        padding: 20px;
+        padding: 4% 2%;
         min-height: 250px;
         border-width: 7px;
         border-style: solid;
-        border-image: url("https://files.catbox.moe/fmru60.gif")
-          7 fill round;
+        border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
       }
 
       .disk {
-        width: clamp(200px, 35vw, 320px);
-        height: clamp(200px, 35vw, 320px);
+        width: clamp(200px, 30vw, 320px);
+        height: clamp(200px, 30vw, 320px);
         display: block;
-        margin: 40px auto;
-        margin-left: 40%;
-        margin-right: 30px;
+        margin: 0 auto;
 
         object-fit: cover;
         -webkit-mask-image: url(https://i.postimg.cc/3RYpcLqS/14.png);
@@ -225,37 +219,45 @@
       }
 
       /*-------MUSIC PLAYER BY GLENTHEMES-------*/
+     @media (max-width: 600px) {
       #glenplayer02 {
-        display:flex;
-        justify-content: right;
-        margin-top:30px;
-        position:relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        position: relative;
       }
-      #glenplayer02 a {text-decoration:none;}
-
+      #glenplayer02 a {
+        text-decoration: none;
+      }
+    }
       #glenplayer02 > div {
-        align-self:center;
-        -webkit-align-self:center;
+        align-self: center;
+        -webkit-align-self: center;
       }
 
       .music-controls {
-        user-select:none;
-        -webkit-user-select:none;
-        width:13px;
-        font-size:20px;
-        cursor:pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        width: 13px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 5px;
       }
       .playy,
       .pausee {
-        color:#a0e0ff;
-        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;} /* color of play & pause buttons */
+        color: #a0e0ff;
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
+      } /* color of play & pause buttons */
 
-      .pausee {display:none;}
+      .pausee {
+        display: none;
+      }
+
       .sonata {
-        margin-left:10px;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size:20px;
-        color:#a0e0ff;
+        margin-left: 10px;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 16px;
+        color: #a0e0ff;
         font-weight: bold;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0; /* color of music note symbol */
       }
@@ -264,19 +266,19 @@
       .labeltext {
         margin-inline-end: 15%;
         position: relative;
-        bottom:10px;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size:14px;
-        color:#F6D5F0;
+        bottom: 10px;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 14px;
+        color: #f6d5f0;
         font-weight: bold;
-        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;/* color of song title */
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0; /* color of song title */
       }
 
       /*Border*/
       .pinky {
         border-width: 10px;
-         border-style: solid;
-         border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
+        border-style: solid;
+        border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
       }
     </style>
   </head>
