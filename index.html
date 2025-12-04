@@ -31,60 +31,54 @@
     <style>
       * {
         box-sizing: border-box;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-family: "M PLUS Rounded 1c", sans-serif;
         font-size: 22px;
-
       }
 
       body {
-        padding-top: 120px;
+        padding-top: 70px;
         background-image: url(https://files.catbox.moe/h08n2c.png);
-        background-size:contain
         background-repeat: repeat;
         height: 100%;
-        display:flex;
+        display: flex;
         flex-direction: column;
       }
       /*Navigation Bar <3*/
       .topnav {
         background-color: #ffc1d9;
-        padding: 10px;
+        padding: 8px 12px;
         border-radius: 50px;
         position: fixed;
         width: min(900px, 90vw);
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
-
+        z-index: 2;
       }
-
 
       .topnav ul {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
-      }
-
-      .topnav li.right {
-        margin-right: 50px;
       }
 
       .topnav a {
         text-decoration: none;
         color: rgb(109, 82, 110);
         font-weight: bold;
-        font-size: 20px;
-        display:flex;
+        font-size: clamp(14px, 2vw, 20px);
+        display: flex;
       }
 
-      /*Picture, Quote, or Logo area (not decided yet)*/
+      /*Picture, Quote, or Logo area */
       .picture-area {
         display: relative;
         text-align: center;
         padding: 15px 0;
-        margin-top: 10px;
+        margin-top: clamp(20px, 4vw, 60px);
         margin-left: 10px;
         margin-right: 10px;
         display: relative;
@@ -98,23 +92,23 @@
       }
 
       @font-face {
-        font-family: 'EscargothDemo';
-        src: url("https://girls-guild-of-code.neocities.org/fonts.css/Escargoth%20Demo.ttf") format('truetype'); /* The path to your font file */
+        font-family: "EscargothDemo";
+        src: url("https://girls-guild-of-code.neocities.org/fonts.css/Escargoth%20Demo.ttf")
+          format("truetype"); /* The path to your font file */
         font-weight: normal;
         font-style: normal;
       }
 
       /*Stick text to picture-area (somehow)*/
       .logo-text {
-        position:absolute;
+        position: absolute;
         top: 23%;
         left: 50%;
         transform: translate(-50%, -75%);
-        font-family:"EscargothDemo", sans-serif;
-        font-size:clamp(28px, 6vw, 55px);
-        color:#ffedfc;
+        font-family: "EscargothDemo", sans-serif;
+        font-size: clamp(28px, 6vw, 55px);
+        color: #ffedfc;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
-
       }
 
       /*Hero Section Start*/
@@ -136,27 +130,24 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items:center;
+        align-items: center;
         gap: 20px;
       }
 
-
-      @media(max-width:768px) {
-
+      @media (max-width: 768px) {
       }
       .left-box {
         height: auto;
         width: min(500px, 90%);
         margin-top: 10px;
         margin-right: 10px;
-        max-width:auto;
+        max-width: auto;
         background-color: #f7e0ec;
         padding: 20px;
         min-height: 250px;
         border-width: 7px;
         border-style: solid;
-        border-image: url("https://files.catbox.moe/fmru60.gif")
-          7 fill round;
+        border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
       }
 
       .disk {
@@ -197,6 +188,7 @@
         margin-top: 30px;
         border-radius: 50px;
       }
+      /*Footer link positioning*/
       .contact {
         width: 30%;
       }
@@ -211,12 +203,14 @@
         color: black;
         font-weight: bold;
         justify-content: center;
+        
       }
 
       a:link {
         color: rgb(109, 82, 110);
         background-color: transparent;
         text-decoration: underline wavy;
+        font-size: clamp(16px, 2vw, 20px);
       }
 
       a:link active {
@@ -225,60 +219,78 @@
       }
 
       /*-------MUSIC PLAYER BY GLENTHEMES-------*/
-      #glenplayer02 {
-        display:flex;
-        justify-content: center;
-        margin-top:10px;
-        left:30%;
-        position: relative;
 
+      #glenplayer02 a {
+        text-decoration: none;
       }
-      #glenplayer02 a {text-decoration:none;}
 
       #glenplayer02 > div {
-        align-self:center;
-        -webkit-align-self:center;
+        align-self: center;
+        -webkit-align-self: center;
       }
 
       .music-controls {
-        user-select:none;
-        -webkit-user-select:none;
-        width:13px;
-        font-size:20px;
-        cursor:pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        width: 100%;
+        font-size: 20px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 10px;
       }
+
       .playy,
       .pausee {
-        color:#a0e0ff;
-        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;} /* color of play & pause buttons */
+        color: #a0e0ff;
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
+      } /* color of play & pause buttons */
 
-      .pausee {display:none;}
+      .pausee {
+        display: none;
+      }
       .sonata {
-        margin-left:10px;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size:20px;
-        color:#a0e0ff;
+        width: 200px;
+        display: inline;
+        overflow: hidden;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 20px;
+        color: #a0e0ff;
         font-weight: bold;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0; /* color of music note symbol */
       }
 
-
       .labeltext {
-        margin-left:0px;
+        margin-left: 0px;
         position: relative;
-        bottom:10px;
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size:14px;
-        color:#F6D5F0;
+        bottom: 10px;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 14px;
+        color: #f6d5f0;
         font-weight: bold;
-        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;/* color of song title */
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0; /* color of song title */
+      }
+
+      .music-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .music-bar-align {
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        width: 100%;
       }
 
       /*Border*/
       .pinky {
         border-width: 10px;
-         border-style: solid;
-         border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
+        border-style: solid;
+        border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
       }
     </style>
   </head>
@@ -329,34 +341,34 @@
       </div>
 
       <div class="disk-area" style="text-align: center">
-        <img
-          class="disk"
-          src="https://files.catbox.moe/5q9a3y.png"
-          oneclick="spin"
-          alt="cd"
-        />
-      </div>
-    </section>
-    <!--MUSIC PLAYER BY GLENTHEMES-->
-    <div id="glenplayer02">
-      <div class="music-controls" onclick="songstart();">
-        <div class="playy">►</div>
-        <div class="pausee">♬</div>
-      </div>
+      <img
+        class="disk"
+        src="https://files.catbox.moe/5q9a3y.png"
+        oneclick="spin"
+        alt="cd"
+      />
 
-      <div class="sonata"><marquee> HALO - bluelike_u </marquee></div>
-
+      <!--MUSIC PLAYER UNDER DISC-->
+      <div id="glenplayer02" class="music-wrapper">
+        <div class="music-bar-align">
+          <div class="music-controls" onclick="songstart();">
+            <div class="playy">►</div>
+            <div class="pausee">♬</div>
+            <div class="sonata">
+            <marquee> HALO - bluelike_u </marquee></div>
+      </div>
       <div class="labeltext"></div>
     </div>
+    </section>
+
     <!--end music player-->
     <audio id="tune" src="https://files.catbox.moe/ew7d5r.mp3"></audio>
 
-    <div class="labeltext"></div>
 
     <!--Footer-->
     <footer>
       <div class="footer-links">
-        <a href="#">Discord</a>
+        <a href="https://discadia.com/girls-guild-of-code">Discord</a>
         <a href="#">Contact</a>
         <a href="#">Credits</a>
       </div>
