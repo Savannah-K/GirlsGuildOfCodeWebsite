@@ -11,11 +11,18 @@
       rel="icon"
       type="image/x-icon"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link rel="preconnect" href="https://fonts.google.com/specimen/Dosis?query=sans+serif" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://files.catbox.moe/y8wxjc.gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://fonts.google.com/specimen/Dosis?query=sans+serif"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://files.catbox.moe/y8wxjc.gif" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <script src="//static.tumblr.com/gtjt4bo/QRmphdsdv/glenplayer02.js"></script>
@@ -26,25 +33,15 @@
         box-sizing: border-box;
         font-family: 'M PLUS Rounded 1c', sans-serif;
         font-size: 22px;
-        font: weight 5px;
-        
-        
-        
+
       }
 
       body {
         padding-top: 120px;
-      }
-
-      body {
         background-image: url(https://files.catbox.moe/h08n2c.png);
-      }
-
-      body {
+        background-size:contain
+        background-repeat: repeat;
         height: 100%;
-      }
-
-      body {
         display:flex;
         flex-direction: column;
       }
@@ -54,12 +51,10 @@
         padding: 10px;
         border-radius: 50px;
         position: fixed;
-        width: 90%;
-        max-width: 1200px;
+        width: min(900px, 90vw);
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000;
 
       }
 
@@ -86,7 +81,7 @@
 
       /*Picture, Quote, or Logo area (not decided yet)*/
       .picture-area {
-        position: relative;
+        display: relative;
         text-align: center;
         padding: 15px 0;
         margin-top: 10px;
@@ -101,9 +96,9 @@
         border-radius: 50px;
         object-fit: cover;
       }
-      
+
       @font-face {
-        font-family: 'EscargothDemo'; 
+        font-family: 'EscargothDemo';
         src: url("https://girls-guild-of-code.neocities.org/fonts.css/Escargoth%20Demo.ttf") format('truetype'); /* The path to your font file */
         font-weight: normal;
         font-style: normal;
@@ -112,12 +107,12 @@
       /*Stick text to picture-area (somehow)*/
       .logo-text {
         position:absolute;
-        top: 50%;
+        top: 23%;
         left: 50%;
-        transform: translate(-50%, -80%);
+        transform: translate(-50%, -75%);
         font-family:"EscargothDemo", sans-serif;
-        font-size:50px;
-        color:#ffedfc; 
+        font-size:clamp(28px, 6vw, 55px);
+        color:#ffedfc;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
 
       }
@@ -139,21 +134,23 @@
       /*Announcement/Event board on left, music on right*/
       .main-bit {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items:center;
+        gap: 20px;
       }
 
-      
+
       @media(max-width:768px) {
-        
+
       }
       .left-box {
         height: auto;
-        width: 50%;
+        width: min(500px, 90%);
         margin-top: 10px;
         margin-right: 10px;
-        max-width:550px;
-        background-color: #ffe7c9;
+        max-width:auto;
+        background-color: #f7e0ec;
         padding: 20px;
         min-height: 250px;
         border-width: 7px;
@@ -163,13 +160,10 @@
       }
 
       .disk {
-        width: min(300px, 40vw);
-        height: min(300px, 40vw);
-        justify-content: center;
-        margin-left: 45px;
-        margin-top: 20px;
-        margin-right: auto;
-        margin-bottom: 20px;
+        width: clamp(200px, 35vw, 320px);
+        height: clamp(200px, 35vw, 320px);
+        display: block;
+        margin: 20px auto;
 
         object-fit: cover;
         -webkit-mask-image: url(https://i.postimg.cc/3RYpcLqS/14.png);
@@ -182,10 +176,6 @@
         mask-position: center;
         animation-duration: 5s;
         animation-iteration-count: infinite;
-      }
-
-
-      .disk {
         animation-name: spin;
         animation-timing-function: linear;
       }
@@ -203,11 +193,9 @@
         display: flex;
         justify-content: center;
         background-color: #a0e0ff;
-        padding: 2%;
-        margin-top: 2%;
+        padding: 20px;
+        margin-top: 30px;
         border-radius: 50px;
-        margin-bottom: 0px;
-        position: sticky;
       }
       .contact {
         width: 30%;
@@ -231,7 +219,7 @@
         text-decoration: underline wavy;
       }
 
-      a:active {
+      a:link active {
         color: #c4f2b5;
         background-color: transparent;
       }
@@ -243,15 +231,15 @@
         margin-top:10px;
         left:30%;
         position: relative;
-  
+
       }
       #glenplayer02 a {text-decoration:none;}
- 
+
       #glenplayer02 > div {
         align-self:center;
         -webkit-align-self:center;
       }
-      
+
       .music-controls {
         user-select:none;
         -webkit-user-select:none;
@@ -261,9 +249,9 @@
       }
       .playy,
       .pausee {
-        color:#a0e0ff; 
+        color:#a0e0ff;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;} /* color of play & pause buttons */
-        
+
       .pausee {display:none;}
       .sonata {
         margin-left:10px;
@@ -273,8 +261,8 @@
         font-weight: bold;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0; /* color of music note symbol */
       }
-      
-      
+
+
       .labeltext {
         margin-left:0px;
         position: relative;
@@ -288,13 +276,10 @@
 
       /*Border*/
       .pinky {
-        border-width: 7px;
+        border-width: 10px;
          border-style: solid;
          border-image: url("https://files.catbox.moe/fmru60.gif") 7 fill round;
       }
-        
-   
- 
     </style>
   </head>
 
@@ -302,7 +287,9 @@
     <!--Navigation Bar links-->
     <nav class="topnav">
       <ul>
-        <li><a href="https://girls-guild-of-code.neocities.org/"> ✿Home✿</a></li>
+        <li>
+          <a href="https://girls-guild-of-code.neocities.org/"> ✿Home✿</a>
+        </li>
         <li><a href="#"> ✿Resources✿</a></li>
         <li><a href="#"> ✿Newsletter✿</a></li>
         <li><a href="#"> ✿Project Gallery✿</a></li>
@@ -310,15 +297,12 @@
       </ul>
     </nav>
 
-   
-
     <!--Picture/logo area-->
     <div class="picture-area">
       <img src="https://files.catbox.moe/y8wxjc.gif" alt="Logo" />
       <h1 class="logo-text">Girls Guild Of Code</h1>
     </div>
-  
-    
+
     <!--Hero-bit section-->
     <section class="hero-section">
       <h2>Welcome to Girls Guild Of Code</h2>
@@ -344,8 +328,13 @@
         </p>
       </div>
 
-      <div class="disk-area" style="text-align: center;">
-        <img class="disk" src="https://files.catbox.moe/5q9a3y.png" oneclick="spin" alt="cd" />
+      <div class="disk-area" style="text-align: center">
+        <img
+          class="disk"
+          src="https://files.catbox.moe/5q9a3y.png"
+          oneclick="spin"
+          alt="cd"
+        />
       </div>
     </section>
     <!--MUSIC PLAYER BY GLENTHEMES-->
@@ -355,15 +344,15 @@
         <div class="pausee">♬</div>
       </div>
 
-      <div class="sonata"> <marquee> HALO - bluelike_u </marquee> 
-      </div>
-      
+      <div class="sonata"><marquee> HALO - bluelike_u </marquee></div>
+
       <div class="labeltext"></div>
-    </div><!--end music player-->
-    <audio id="tune" src="https://files.catbox.moe/ew7d5r.mp3" ></audio>
-    
-    <div class="labeltext"> </div>
-    
+    </div>
+    <!--end music player-->
+    <audio id="tune" src="https://files.catbox.moe/ew7d5r.mp3"></audio>
+
+    <div class="labeltext"></div>
+
     <!--Footer-->
     <footer>
       <div class="footer-links">
@@ -372,5 +361,5 @@
         <a href="#">Credits</a>
       </div>
     </footer>
-    </body>
+  </body>
 </html>
