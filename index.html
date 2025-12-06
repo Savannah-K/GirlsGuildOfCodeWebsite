@@ -36,7 +36,7 @@
       }
 
       body {
-        padding-top: 100px;
+        padding-top: var(--nav-height, 120px);
         background-image: url(https://files.catbox.moe/h08n2c.png);
         background-repeat: repeat;
         height: 100%;
@@ -75,7 +75,7 @@
 
       /*Picture, Quote, or Logo area */
       .picture-area {
-        display: relative;
+        position: relative;
         text-align: center;
         padding: 15px 0;
         margin-top: clamp(20px, 4vw, 60px);
@@ -102,13 +102,14 @@
       /*Stick text to picture-area (somehow)*/
       .logo-text {
         position: absolute;
-        top: 23%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -75%);
         font-family: "EscargothDemo", sans-serif;
         font-size: clamp(28px, 6vw, 55px);
         color: #ffedfc;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
+        pointer-events: none;
       }
 
       /*Hero Section Start*/
@@ -203,7 +204,6 @@
         color: rgb(109, 82, 110);
         font-weight: bold;
         justify-content: center;
-        
       }
 
       a:link {
@@ -218,7 +218,7 @@
         background-color: transparent;
       }
 
-      a:visited{
+      a:visited {
         color: rgb(109, 82, 110);
         background-color: transparent;
         text-decoration: underline wavy;
@@ -288,7 +288,7 @@
 
       .music-bar-align {
         display: flex;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
         width: 100%;
       }
@@ -304,15 +304,31 @@
 
   <body>
     <!--Navigation Bar links-->
-    <nav class="topnav">
+    <nav class="topnav" id="topnav">
       <ul>
         <li>
           <a href="https://girls-guild-of-code.neocities.org/"> ✿Home✿</a>
         </li>
-        <li><a href="https://girls-guild-of-code.neocities.org/resources"> ✿Resources✿</a></li>
-        <li><a href="https://girls-guild-of-code.neocities.org/newsletter"> ✿Newsletter✿</a></li>
-        <li><a href="https://girls-guild-of-code.neocities.org/project-gallery"> ✿Project Gallery✿</a></li>
-        <li><a href="https://girls-guild-of-code.neocities.org/events"> ✿Events✿</a></li>
+        <li>
+          <a href="https://girls-guild-of-code.neocities.org/resources">
+            ✿Resources✿</a
+          >
+        </li>
+        <li>
+          <a href="https://girls-guild-of-code.neocities.org/newsletter">
+            ✿Newsletter✿</a
+          >
+        </li>
+        <li>
+          <a href="https://girls-guild-of-code.neocities.org/project-gallery">
+            ✿Project Gallery✿</a
+          >
+        </li>
+        <li>
+          <a href="https://girls-guild-of-code.neocities.org/events">
+            ✿Events✿</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -348,29 +364,31 @@
       </div>
 
       <div class="disk-area" style="text-align: center">
-      <img
-        class="disk"
-        src="https://files.catbox.moe/5q9a3y.png"
-        oneclick="spin"
-        alt="cd"
-      />
+        <img
+          class="disk"
+          src="https://files.catbox.moe/5q9a3y.png"
+          onclick="spin()"
+          alt="cd"
+        />
 
-      <!--MUSIC PLAYER UNDER DISC-->
-      <div id="glenplayer02" class="music-wrapper">
-        <div class="music-bar-align">
-          <div class="music-controls" onclick="songstart();">
-            <div class="playy">►</div>
-            <div class="pausee">♬</div>
-            <div class="sonata">
-            <marquee> HALO - bluelike_u </marquee></div>
+        <!--MUSIC PLAYER UNDER DISC-->
+        <div id="glenplayer02" class="music-wrapper">
+          <div class="music-bar-align">
+            <div class="music-controls" onclick="songstart();">
+              <div class="playy">►</div>
+              <div class="pausee">♬</div>
+              <div class="sonata">
+                <marquee> HALO - bluelike_u </marquee>
+              </div>
+            </div>
+            <div class="labeltext"></div>
+          </div>
+        </div>
       </div>
-      <div class="labeltext"></div>
-    </div>
     </section>
 
     <!--end music player-->
     <audio id="tune" src="https://files.catbox.moe/ew7d5r.mp3"></audio>
-
 
     <!--Footer-->
     <footer>
@@ -380,5 +398,18 @@
         <a href="https://girls-guild-of-code.neocities.org/credits">Credits</a>
       </div>
     </footer>
+    <!--JavaScript bit for better mobile sizing-->
+    <script>
+      function updateNavPadding() {
+        const nav = document.getElementById("topnav");
+        document.body.style.setProperty(
+          "--nav-height",
+          nav.offsetHeight + 20 + "px"
+        );
+      }
+
+      window.addEventListener("load", updateNavPadding);
+      window.addEventListener("resize", updateNavPadding);
+    </script>
   </body>
 </html>
